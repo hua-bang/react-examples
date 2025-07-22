@@ -1,0 +1,134 @@
+/* App.css - Minimal styles for the AI Chat Performance Evaluator */
+
+/* Remove default styles that might conflict with Tailwind */
+#root {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* Ensure smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for better UX */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Animation for performance indicators */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Ensure charts are responsive */
+.recharts-wrapper {
+  width: 100% !important;
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Typewriter effect for demo text */
+.typewriter {
+  overflow: hidden;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Performance test area styling */
+.test-area {
+  min-height: 200px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Highlight active test method */
+.test-method-active {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+/* Ensure proper text rendering for performance tests */
+.performance-text {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  line-height: 1.5;
+  letter-spacing: 0.025em;
+}
+
+/* Status indicators */
+.status-running {
+  color: #059669;
+}
+
+.status-idle {
+  color: #6b7280;
+}
+
+.status-error {
+  color: #dc2626;
+}
+
+/* Chart tooltip styling */
+.recharts-tooltip-wrapper {
+  z-index: 1000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .test-area {
+    min-height: 150px;
+    max-height: 300px;
+  }
+  
+  .performance-text {
+    font-size: 14px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none;
+  }
+  
+  .test-area {
+    max-height: none;
+    overflow: visible;
+  }
+}
